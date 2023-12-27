@@ -11,3 +11,4 @@ bcrypt = Bcrypt(app)
 app.app_context().push()
 
 from shop.admin import routes
+from shop.products import routes
