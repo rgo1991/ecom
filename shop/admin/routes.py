@@ -2,15 +2,27 @@ from flask import render_template, session, request, redirect, url_for, flash
 from shop import app, db, bcrypt
 from .forms import RegistrationForm, LoginForm
 from .models import User
-
+from shop.products.models import AddProduct, Brand, Category
 
 @app.route('/admin')
 def admin():
-    return render_template('index.html', title='Admin Page')
+    products = AddProduct.query.all()
+    return render_template('index.html', title='Admin Page', products=products)
 
 #@app.route('/register')
 #def register():
 #    return render_template('admin/register.html', title="Register")
+
+@app.route('/brands')
+def brands():
+    brands = Brand.query.order_by(Brand.id.desc()).all()
+    return render_template('brand.html', title='Brand Page', brands=brands)
+
+@app.route('/categories')
+def categories():
+    category = Category.query.order_by(Category.id.desc()).all()
+    return render_template('brand.html', title='Categories Page', category=category)
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

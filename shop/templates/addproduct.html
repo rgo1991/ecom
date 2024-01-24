@@ -25,13 +25,13 @@
                         <select name="categories" id="categories" class="form-control" required>
                                 <option value=""> Select a category </option>
                                 {% for category in categories %}
-                                        <option value="categories.id">{{category.name}}</option>
+                                        <option value="category.id">{{category.name}}</option>
                                 {% endfor %}
                         </select>
 
 
 			{{ render_field(form.description, class="form-control", placeholder="Please enter product description")}}
-                	{{ render_field(form.colour, class="form-control", placeholder="Please enter product color")}}
+                	{{ render_field(form.color, class="form-control", placeholder="Please enter product color")}}
 		
 
 		<div class="container">

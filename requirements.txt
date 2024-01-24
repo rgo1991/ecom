@@ -9,6 +9,7 @@ Flask-Login
 Flask-Mail
 flask-sqlalchemy
 Flask-WTF
+flask-uploads
 greenlet
 idna
 importlib-metadata
@@ -21,3 +22,4 @@ typing-extensions
 werkzeug
 WTForms
 zipp
+Werkzeug==0.16.0
